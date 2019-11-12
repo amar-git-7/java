@@ -10,9 +10,6 @@ public class maxchar {
 		String chars="this is very interesting article 34545 in the book code 12323443434.";
 
 		Map <Character, Integer > maxcharMap= new HashMap<Character, Integer>();
-		Integer maxval=0;
-		Character maxcharr=' '; 
-
 
 		for (char s : chars.toCharArray()){
 
