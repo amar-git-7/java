@@ -1,6 +1,6 @@
 package myprojgrp.allcode;
 
-public class reverseinteger {
+public class intreverse {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
