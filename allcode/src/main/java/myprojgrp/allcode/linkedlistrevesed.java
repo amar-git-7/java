@@ -1,17 +1,23 @@
 package myprojgrp.allcode;
 
-public class reverseinteger {
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class linkedlistrevesed {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int orgint=51;
+	LinkedList<String> lnlst = new LinkedList<String>();
 	
-		StringBuilder intstr= new StringBuilder();
-		intstr.append(String.valueOf((orgint<0)? orgint*-1: orgint));
+	lnlst.add("One");
+	lnlst.add("three");
+	lnlst.add(1, "two");
 	
-		
-		System.out.println((orgint>0)? intstr.reverse().toString(): Integer.parseInt(intstr.reverse().toString())*-1);
-		//System.out.println("Is the String:"+plaindr+":Plaindrome:"+plaindr.equals(plaindrbuld.reverse().toString()));
+	Iterator<String> iter = lnlst.descendingIterator();
+	
+	while(iter.hasNext()){
+		System.out.println(iter.next());
+	}
 		
 		
 	}
