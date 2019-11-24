@@ -1,51 +1,60 @@
-package myprojgrp.allcode;
 
+package myprojgrp.allcode;
 import java.io.*;
 import java.math.*;
+import java.security.*;
 import java.text.*;
 import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
 import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
-public class simplearraysum {
+class Result {
 
     /*
-     * Complete the simpleArraySum function below.
+     * Complete the 'diagonalDifference' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts 2D_INTEGER_ARRAY arr as parameter.
      */
-    static int simpleArraySum(int[] ar) {
-     
-    	int sumnums=0;
-    	for (int num : ar){
-    		sumnums=sumnums+num;
-    	}
-    	
-    	return sumnums;
 
+    public static int diagonalDifference(List<List<Integer>> arr) {
+    // Write your code here
+    	return 0 ;
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
+}
 
+public class simplearraysum {
     public static void main(String[] args) throws IOException {
-    	
-    	//System.out.println(System.getenv("OUTPUT_PATH"));
-       // BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("c:\\all_data"));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int arCount = Integer.parseInt(scanner.nextLine().trim());
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-        int[] ar = new int[arCount];
+        List<List<Integer>> arr = new ArrayList<>();
 
-        String[] arItems = scanner.nextLine().split(" ");
+        IntStream.range(0, n).forEach(i -> {
+            try {
+                arr.add(
+                    Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                        .map(Integer::parseInt)
+                        .collect(toList())
+                );
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
 
-        for (int arItr = 0; arItr < arCount; arItr++) {
-            int arItem = Integer.parseInt(arItems[arItr].trim());
-            ar[arItr] = arItem;
-        }
+        int result = Result.diagonalDifference(arr);
 
-        int result = simpleArraySum(ar);
+        //bufferedWriter.write(String.valueOf(result));
+        //bufferedWriter.newLine();
 
-        System.out.println(result);
-       /* bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
-
-        bufferedWriter.close();*/
+        bufferedReader.close();
+        //bufferedWriter.close();
     }
 }

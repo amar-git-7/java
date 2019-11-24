@@ -1,8 +1,5 @@
 package myprojgrp.allcode;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-
 public class searchstring {
 
 	public static void main(String[] args) {
