@@ -35,14 +35,14 @@ public class hk_minmaxsum {
 			sum+=arr[ii];
 			ii++;
 		}
-    	long minvall=sum,maxvall=sum;
+    	long minvall=sum,maxvall=0;
     	for (int i=0;i<arr.length;i++){
     		
-    		if (maxvall>(sum-arr[i])){
-    			minvall=sum-arr[i];
-    		}
-    		if (maxvall>(sum-arr[i])){
+    		if (maxvall<(sum-arr[i])){
     			maxvall=sum-arr[i];
+    		}
+    		if (minvall>(sum-arr[i])){
+    			minvall=sum-arr[i];
     		}
     	}
     System.out.println(minvall +" "+maxvall);
